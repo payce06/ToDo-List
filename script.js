@@ -11,3 +11,16 @@ input.addEventListener('keypress', (e) => {
         addTodo();
     }
 });
+
+function addTodo(){
+    const task = input.value.trim();
+    if (task == '') {
+        return
+    };
+
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.textContent = task;
+    span.addEventListener('click', () => {
+        li.classList.toggle('completed');
+    });
