@@ -24,3 +24,16 @@ function addTodo(){
     span.addEventListener('click', () => {
         li.classList.toggle('completed');
     });
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '🗑️';
+    deleteBtn.addEventListener('click', () => {
+        list.removeChild(li);
+    });
+
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    list.appendChild(li);
+
+    input.value = '';
+}
